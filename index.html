@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Volei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="dashboard">
+    <header class="scoreboard">
+      <h1 class="team-name">
+        <span class="logo-mark">VP</span>
+        Volei Paulao
+      </h1>
+
+      <div class="set-controls" aria-label="Controle de sets">
+        <button class="circle-btn minus" type="button" data-target="home" data-delta="-1">-1</button>
+        <button class="circle-btn plus" type="button" data-target="home" data-delta="1">+1</button>
+
+        <div class="sets">
+          <b id="sets-home">0</b>
+          <span>X</span>
+          <b id="sets-away">0</b>
+        </div>
+
+        <button class="circle-btn plus" type="button" data-target="away" data-delta="1">+1</button>
+        <button class="circle-btn minus" type="button" data-target="away" data-delta="-1">-1</button>
+      </div>
+
+      <h2 class="team-name right">Adversario</h2>
+    </header>
+
+    <section class="toolbar" aria-label="Acoes da planilha">
+      <p id="status-message" class="status-message" role="status" aria-live="polite">
+        Clique nas colunas N, Nome ou Posicao para editar.
+      </p>
+      <div class="toolbar-actions">
+        <button id="export-data-btn" type="button" class="action-btn">Exportar JSON</button>
+        <button id="import-data-btn" type="button" class="action-btn">Importar JSON</button>
+        <button id="reset-data-btn" type="button" class="action-btn action-btn-danger">Resetar Dados</button>
+        <input id="import-data-input" type="file" accept="application/json,.json" hidden />
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <article class="card">
+        <div class="table-wrap">
+          <table aria-label="Estatisticas de ataque, bloqueio e saque">
+            <thead>
+              <tr class="group">
+                <th colspan="3">Atleta</th>
+                <th colspan="3">Ataque</th>
+                <th colspan="3">Bloqueio</th>
+                <th colspan="3">Saque</th>
+              </tr>
+              <tr class="subhead">
+                <th>N</th>
+                <th>Nome</th>
+                <th>Posicao</th>
+                <th>Ponto</th>
+                <th>Em Jogo</th>
+                <th>Erro</th>
+                <th>Ponto</th>
+                <th>Em Jogo</th>
+                <th>Erro</th>
+                <th>Ace</th>
+                <th>Em Jogo</th>
+                <th>Erro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-player-id="p01"><td>1</td><td>Matheus</td><td>LV</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr data-player-id="p14"><td>14</td><td>Zampieri</td><td>LV</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr data-player-id="p08"><td>8</td><td>Guararema</td><td>PT</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr data-player-id="p10"><td>10</td><td>Juan</td><td>PT</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr data-player-id="p16"><td>16</td><td>Erik T.</td><td>PT</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr data-player-id="p18"><td>18</td><td>Cris</td><td>PT</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr data-player-id="p09"><td>9</td><td>L. Felipe</td><td>OP</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr data-player-id="p13"><td>13</td><td>Perucci</td><td>OP</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr data-player-id="p11"><td>11</td><td>Marcos</td><td>CT</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr data-player-id="p15"><td>15</td><td>Burns</td><td>CT</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr data-player-id="p24"><td>24</td><td>Adriel</td><td>CT</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <div class="bottom-grid">
+        <article class="card">
+          <div class="table-wrap">
+            <table aria-label="Estatisticas de passe e defesa">
+              <thead>
+                <tr class="group">
+                  <th colspan="3">Atleta</th>
+                  <th colspan="3">Passe</th>
+                  <th colspan="3">Defesa</th>
+                </tr>
+                <tr class="subhead">
+                  <th>N</th>
+                  <th>Nome</th>
+                  <th>Posicao</th>
+                  <th>A</th>
+                  <th>B</th>
+                  <th>C</th>
+                  <th>A</th>
+                  <th>Em Jogo</th>
+                  <th>Erro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-player-id="p07"><td>7</td><td>Feijao</td><td>LB</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p02"><td>2</td><td>Nicolas</td><td>LB</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p12"><td>12</td><td>Leo</td><td>LB</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p01"><td>1</td><td>Matheus</td><td>LV</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p14"><td>14</td><td>Zampieri</td><td>LV</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p08"><td>8</td><td>Guararema</td><td>PT</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p10"><td>10</td><td>Juan</td><td>PT</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p16"><td>16</td><td>Erik T.</td><td>PT</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p18"><td>18</td><td>Cris</td><td>PT</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p09"><td>9</td><td>L. Felipe</td><td>OP</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p13"><td>13</td><td>Perucci</td><td>OP</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p11"><td>11</td><td>Marcos</td><td>CT</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p15"><td>15</td><td>Burns</td><td>CT</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr data-player-id="p24"><td>24</td><td>Adriel</td><td>CT</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <aside class="rotation" aria-label="Rotacao em quadra">
+          <section class="half-court">
+            <div class="position top-left" data-player-id="p09">9</div>
+            <div class="position top-center" data-player-id="p24">24</div>
+            <div class="position top-right" data-player-id="p18">18</div>
+          </section>
+          <section class="half-court">
+            <div class="position bot-left" data-player-id="p16">16</div>
+            <div class="position bot-center" data-player-id="p15">15</div>
+            <div class="position bot-right" data-player-id="p01">1</div>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
